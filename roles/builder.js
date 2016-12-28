@@ -1,4 +1,3 @@
-var roleHarvester = require('role.harvester');
 var commands = require('common.commands');
 
 var roleBuilder = {
