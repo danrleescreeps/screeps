@@ -1,9 +1,9 @@
 var creepSpawn = require('action.creepSpawn');
 var buildingSpawn = require('action.buildingSpawn');
-var roleHarvester = require('./roles/harvester');
-var roleUpgrader = require('./roles/upgrader');
-var roleBuilder = require('./roles/builder');
-var roleArmy = require('./roles/army');
+var roleHarvester = require('role.harvester');
+var roleUpgrader = require('role.upgrader');
+var roleBuilder = require('role.builder');
+var roleArmy = require('role.army');
 
 var mainSpawn = Game.spawns['Spawn1'];
 if(mainSpawn.room.controller.level == 1) {

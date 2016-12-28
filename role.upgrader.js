@@ -1,4 +1,4 @@
-var roleHarvester = require('./harvester');
+var roleHarvester = require('role.harvester');
 
 var roleUpgrader = {
   /** @param {Creep} creep **/
