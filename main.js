@@ -5,8 +5,10 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleArmy = require('role.army');
 var tower = require('role.tower');
+var scan = require('scan.resources');
 
 var mainSpawn = Game.spawns['Spawn1'];
+console.log(scan.scanResources(mainSpawn.room));
 tower.run(mainSpawn);
 creepSpawn.maintainArmy(mainSpawn);
 if(mainSpawn.room.controller.level == 1) {
