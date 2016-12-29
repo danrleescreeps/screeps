@@ -46,8 +46,8 @@ var buildingSpawn = {
         filter: structure => structure.structureType == STRUCTURE_TOWER
       });
       if(towers.length < 2) {
-        var contrustionSite = commands.getRandomLocation(spawn);
-        if(contrustionSite) {
+        var constructionSite = commands.getRandomLocation(spawn);
+        if(constructionSite) {
           constructionSite.createConstructionSite(STRUCTURE_TOWER);
         }
       }

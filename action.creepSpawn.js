@@ -64,7 +64,7 @@ var creepSpawn = {
     var hostiles = spawn.room.find(FIND_HOSTILE_CREEPS);
 
     if(hostiles.length > 0) {
-      if(ranged.length < 2) {
+      if(ranged.length < 4) {
         if(spawn.canCreateCreep([RANGED_ATTACK,RANGED_ATTACK,RANGED_ATTACK,RANGED_ATTACK,MOVE,MOVE,MOVE], undefined, {role: 'ranged'}) == OK) {
           console.log('Creating ranged: ', spawn.createCreep([RANGED_ATTACK,RANGED_ATTACK,RANGED_ATTACK,RANGED_ATTACK,MOVE,MOVE,MOVE], undefined, {role: 'ranged'}));
         } else if(spawn.canCreateCreep([RANGED_ATTACK,RANGED_ATTACK,RANGED_ATTACK,MOVE,MOVE], undefined, {role: 'ranged'}) == OK) {

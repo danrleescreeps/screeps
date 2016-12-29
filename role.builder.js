@@ -20,8 +20,9 @@ var roleBuilder = {
       var structureToRepair = Game.getObjectById(creep.memory.structureToRepair) || commands.findStructureToRepair(creep);
 
       if(roads.length > 0) {
-        if(creep.repair(roads[0]) == ERR_NOT_IN_RANGE) {
-          creep.moveTo(roads[0]);
+        var closestRoad = creep.pos.findClosestByPath(roads);
+        if(creep.repair(closestRoad) == ERR_NOT_IN_RANGE) {
+          creep.moveTo(closestRoad);
         }
       } else if(site) {
         if(creep.build(site) == ERR_NOT_IN_RANGE) {

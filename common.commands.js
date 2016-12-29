@@ -26,13 +26,17 @@ var commands = {
     var energyStores = creep.room.find(FIND_MY_STRUCTURES, {
       filter: (structure) => {
         return (structure.structureType == STRUCTURE_SPAWN ||
-          structure.structureType == STRUCTURE_EXTENSION ||
-          structure.structureType == STRUCTURE_TOWER) &&
+          structure.structureType == STRUCTURE_EXTENSION) &&
           structure.energy < structure.energyCapacity
       }
     });
     if(energyStores.length == 0) {
-      return null;
+      var towers = creep.room.find(FIND_MY_STRUCTURES, {
+        filter: structure => structure.structureType == STRUCTURE_TOWER && structure.energy < structure.energyCapacity
+      });
+      if(towers.length > 0) {
+        return creep.pos.findClosestByRange(towers);
+      }
     } else {
       return creep.pos.findClosestByPath(energyStores);
     }
